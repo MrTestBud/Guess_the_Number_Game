@@ -43,19 +43,19 @@ public class Guess_The_number_game {
 
                 if (obj.isCorrectNumber() == 0) {
                     obj.setguesses();
-                    System.out.println("Sahi hai");
+                    System.out.println("You Guessed it right. Congratulations!!");
                     obj.getNoOfGuess();
                     break;
                 } else if (obj.isCorrectNumber() == -1) {
                     obj.setguesses();
-                    System.out.println("Bada hai Num");
+                    System.out.println("The Number is larger");
                 } else if (obj.isCorrectNumber() == 1) {
                     obj.setguesses();
-                    System.out.println("Num Chota hai");
+                    System.out.println("The Number is smaller!");
 
                 }
             }
-            String s = "Would you like continue ? (Y/N)";
+            String s = "Would you like to play again ? (Y/N)";
             Scanner strscan = new Scanner(System.in);
             System.out.println(s);
             String co = strscan.nextLine();
