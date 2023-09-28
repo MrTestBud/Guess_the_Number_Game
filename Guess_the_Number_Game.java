@@ -30,29 +30,42 @@ class Game{
 }
 
 
-public class Guess_the_Number_Game {
+public class Guess_The_number_game {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        Game obj = new Game();
+        while (true) {
+            Scanner scan = new Scanner(System.in);
+            Game obj = new Game();
 
-        while (true){
-            System.out.println("Enter a number between 1 to 100 (1-100): ");
-            int user = scan.nextInt();
-            obj.takeUserInput(user);
+            while (true) {
+                System.out.println("Enter a number between 1 to 100 (1-100): ");
+                int user = scan.nextInt();
+                obj.takeUserInput(user);
 
-            if (obj.isCorrectNumber() == 0 ){
-                obj.setguesses();
-                System.out.println("The Number is Correct. Congratualtions!!!");
-                obj.getNoOfGuess();
+                if (obj.isCorrectNumber() == 0) {
+                    obj.setguesses();
+                    System.out.println("Sahi hai");
+                    obj.getNoOfGuess();
+                    break;
+                } else if (obj.isCorrectNumber() == -1) {
+                    obj.setguesses();
+                    System.out.println("Bada hai Num");
+                } else if (obj.isCorrectNumber() == 1) {
+                    obj.setguesses();
+                    System.out.println("Num Chota hai");
+
+                }
+            }
+            String s = "Would you like continue ? (Y/N)";
+            Scanner strscan = new Scanner(System.in);
+            System.out.println(s);
+            String co = strscan.nextLine();
+            if ("Y".equals(co)) {
+                continue;
+            } else if ("N".equals(co)) {
                 break;
             }
-            else if (obj.isCorrectNumber() == -1) {
-                obj.setguesses();
-                System.out.println("The Number is Greater!");
-            }
-            else if (obj.isCorrectNumber() == 1){
-                obj.setguesses();
-                System.out.println("The Number is Smaller");
+            else{
+                System.out.println("You didn't choose either option! ENDING THE GAME...");
             }
         }
     }
