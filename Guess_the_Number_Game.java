@@ -42,17 +42,17 @@ public class Guess_the_Number_Game {
 
             if (obj.isCorrectNumber() == 0 ){
                 obj.setguesses();
-                System.out.println(" Sahi hai");
+                System.out.println("The Number is Correct. Congratualtions!!!");
                 obj.getNoOfGuess();
                 break;
             }
             else if (obj.isCorrectNumber() == -1) {
                 obj.setguesses();
-                System.out.println("Bada hai Num");
+                System.out.println("The Number is Greater!");
             }
             else if (obj.isCorrectNumber() == 1){
                 obj.setguesses();
-                System.out.println("Num Chota hai");
+                System.out.println("The Number is Smaller");
             }
         }
     }
